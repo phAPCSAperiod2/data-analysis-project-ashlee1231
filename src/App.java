@@ -17,15 +17,33 @@ public class App {
 
     public static void main(String[] args) {
 
-        // TODO: Update this with your CSV file path
-        File file = new File("data/your_dataset.csv");
+        //CSV file path and scanner setup
+        File file = new File("pokemon.csv");
+        Scanner scan = new Scanner(file);
 
-        // TODO: Create an array of Data objects to store data
+        //Create an array of Data objects to store data
+        Pokemon[] pokemonList = new Pokemon[152];
 
 
-        // TODO: Read file using Scanner
-        // - Skip header if needed
+        // Reading file using scanner and parsing data
+
+        //Skipping the header row
+        scan.nextLine();
         // - Loop through rows
+        for (int i = 0; i < pokemonList.length; i++) {
+            String line = scan.nextLine();
+            String[] columns = line.split(",");
+            // Assuming columns are: name, type1, type2, attack, defense, speed
+            String name = columns[1];
+            String type1 = columns[2];
+            String type2 = columns[3];
+            int attack = Integer.parseInt(columns[5]);
+            int defense = Integer.parseInt(columns[6]);
+            int speed = Integer.parseInt(columns[7]);
+
+            // Create a new Pokemon object and add to the array
+            pokemonList[i] = new Pokemon(name, type1, type2, attack, defense, speed);
+        }
         // - Split each line by commas
         // - Convert text to numbers when needed
         // - Create new Data objects

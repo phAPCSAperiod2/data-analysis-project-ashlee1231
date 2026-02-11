@@ -9,13 +9,16 @@
  *  - Override toString() to display the object's data
  *  - Add Javadoc comments for the class and all methods
  */
-public class Data {
+public class Pokemon {
 
     // TODO: Add at least 3 private attributes
     // Example:
-    // private String name;
-    // private int population;
-    // private double value;
+    private String name;
+    private String type1;
+    private String type2;
+    private int attack;
+    private int defense;
+    private int speed;
 
 
     // TODO: Create a constructor that takes all attributes as parameters
