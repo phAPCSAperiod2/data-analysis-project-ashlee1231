@@ -44,11 +44,6 @@ public class App {
             // Create a new Pokemon object and add to the array
             pokemonList[i] = new Pokemon(name, type1, type2, attack, defense, speed);
         }
-        // - Split each line by commas
-        // - Convert text to numbers when needed
-        // - Create new Data objects
-        // - Add to your array
-
 
         // TODO: Call your analysis methods
         // Example:

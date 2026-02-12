@@ -22,9 +22,23 @@ public class Pokemon {
 
 
     // TODO: Create a constructor that takes all attributes as parameters
+    Pokemon (String name, String type1, String type2, int attack, int defense, int speed) {
+        this.name = name;
+        this.type1 = type1;
+        this.type2 = type2;
+        this.attack = attack;
+        this.defense = defense;
+        this.speed = speed;
+    }
 
 
     // TODO: Add getters for attributes you need
+    public String getName() {
+        return name;
+    }
+    public String getType1() {
+        return type1;
+    }
 
     // TODO: Add other data analysis methods
 
