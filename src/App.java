@@ -38,11 +38,9 @@ public class App {
             String type1 = columns[2];
             String type2 = columns[3];
             int attack = Integer.parseInt(columns[5]);
-            int defense = Integer.parseInt(columns[6]);
-            int speed = Integer.parseInt(columns[7]);
 
             // Create a new Pokemon object and add to the array
-            pokemonList[i] = new Pokemon(name, type1, type2, attack, defense, speed);
+            pokemonList[i] = new Pokemon(name, type1, type2, attack);
         }
 
         // TODO: Call your analysis methods
