@@ -145,8 +145,8 @@ You must write **at least two algorithms** to analyze your dataset.
 
 **Algorithms I will implement:**
 
-1. __________________________________________  
-2. __________________________________________  
+1. max value of attack  
+2. average value of attack in a certain type
 
 Optional extras:  
 - Sorting  
