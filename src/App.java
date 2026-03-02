@@ -25,16 +25,17 @@ public class App {
         scan.nextLine();
         // - Loop through rows
         for (int i = 0; i < pokemonList.length; i++) {
+            String type2;
             String line = scan.nextLine();
             String[] columns = line.split(",");
             // Assuming columns are: name, type1, type2, attack, defense, speed
             String name = columns[1];
             String type1 = columns[2];
             if (columns[3].isEmpty()) {
-                columns[3] = "None";
+                type2 = "None";
             }
-            else {
-                String type2 = columns[3];
+            else {        
+                type2 = columns[3];
             }
             int attack = Integer.parseInt(columns[5]);
 
