@@ -30,7 +30,12 @@ public class App {
             // Assuming columns are: name, type1, type2, attack, defense, speed
             String name = columns[1];
             String type1 = columns[2];
-            String type2 = columns[3];
+            if (columns[3].isEmpty()) {
+                columns[3] = "None";
+            }
+            else {
+                String type2 = columns[3];
+            }
             int attack = Integer.parseInt(columns[5]);
 
             // Create a new Pokemon object and add to the array
@@ -44,9 +49,7 @@ public class App {
         // double average = computeAverageValue(dataList);
         Pokemon strongestPokemon = Pokemon.strongestPokemon(pokemonList);
 
-        System.out.println("What type are you interested in? ");
-        String userInput = userScan.nextLine();
-        double averageValue = Pokemon.avgType(userInput, pokemonList);
+        double averageValue = Pokemon.avgType("Grass", pokemonList);
 
         userScan.close();
 
@@ -56,7 +59,7 @@ public class App {
         // - Final answer to your guiding question
         System.out.println("The strongest pokemon is " + strongestPokemon.getName());
         System.out.println(strongestPokemon.toString());
-        System.out.println("The type you investigated is " + userInput + " with an average attack of " + averageValue);
+        System.out.println("The type you investigated is Grass with an average attack of " + averageValue);
     }
 
 

@@ -47,11 +47,11 @@ public class Pokemon {
 
         }
 
-    public static double avgType(String userInputType, Pokemon[] pokemonList) {
+    public static double avgType(String pokemonType, Pokemon[] pokemonList) {
         int sum = 0;
         int numTypes = 0;
         for (int i = 0; i < pokemonList.length; i++) {
-            if (pokemonList[i].getType1().equals(userInputType) || pokemonList[i].getType2().equals(userInputType)) {
+            if (pokemonList[i].getType1().equals(pokemonType) || pokemonList[i].getType2().equals(pokemonType)) {
                 sum += pokemonList[i].getAttack();
                 numTypes++;
             }
