@@ -11,7 +11,7 @@ public class App {
     public static void main(String[] args) throws FileNotFoundException {
 
         //CSV file path and scanner setup
-        File file = new File("pokemon.csv");
+        File file = new File("Data/pokemon.csv");
         Scanner scan = new Scanner(file);
         Scanner userScan = new Scanner(System.in);
 
