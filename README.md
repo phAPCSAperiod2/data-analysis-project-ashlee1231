@@ -54,10 +54,10 @@ Think simple, clear, and answerable.
 Your repository should follow this structure:
 ```
 /src
-    Main.java
-    YourClass.java
-/data
-    your_dataset.csv
+    App.java
+    Pokemon.java
+/Data
+    pokemon.csv
 README.md   ← this file
 UML_Diagram.png (or UML_Diagram.pdf)
 ```
@@ -66,12 +66,12 @@ UML_Diagram.png (or UML_Diagram.pdf)
 
 ## 🧩 Step 1 — Choose Your Dataset
 
-**Dataset Name:**  
-**Source / Link:**  
+**Dataset Name:** Pokemon Generation 1 Dataset
 
-**What this dataset contains (2–3 sentences):**  
-____________________________________________________________________  
-____________________________________________________________________  
+**Source / Link:** https://www.kaggle.com/abcsds/pokemon
+
+**What this dataset contains (2–3 sentences:**
+This dataset contains information about 151 Pokémon from Generation 1, including their names, primary and secondary types, and battle stats (HP, Attack, Defense, Speed). Each row represents a unique Pokémon with attributes that describe its characteristics in battle. The data allows for analysis of type distributions and statistical comparisons across different Pokémon.
 
 ---
 
@@ -79,9 +79,9 @@ ____________________________________________________________________
 
 Your guiding question should be something you can answer using your dataset.
 
-**My guiding question:**  
-____________________________________________________________________  
-____________________________________________________________________  
+**My guiding question:**
+
+"What Pokémon is the strongest (has the highest attack stat), and what is the average attack power of Grass-type Pokémon?"
 
 Examples:
 
@@ -97,16 +97,34 @@ You must create a class that represents **one row** of your dataset.
 
 ### ✔ Your class must include:
 
-- **At least 3 private attributes**  
+- **At least 3 private attributes** (name, type1, type2, attack)
 - **A constructor** that takes all attributes as parameters  
-- **Getter methods** for attributes you plan to analyze  
+- **Getter methods** for attributes you plan to analyze (getName, getAttack, getType1, getType2)
 - **`toString()`** for easy printing  
-- Any additional analysis/helper methods as needed  
+- Any additional analysis/helper methods as needed (strongestPokemon, avgType)
 
 ### ✏ Include your class diagram
 
-
----
+UML Diagram for Pokemon class:
+```
+┌─────────────────────────────────┐
+│          Pokemon                │
+├─────────────────────────────────┤
+│ - name: String                  │
+│ - type1: String                 │
+│ - type2: String                 │
+│ - attack: int                   │
+├─────────────────────────────────┤
+│ + Pokemon(String, String, ...): │
+│ + getName(): String             │
+│ + getAttack(): int              │
+│ + getType1(): String            │
+│ + getType2(): String            │
+│ + toString(): String            │
+│ + strongestPokemon([], int):Poke│
+│ + avgType(String, [], int):doub │
+└─────────────────────────────────┘
+```
 
 ## 📥 Step 4 — Read Your CSV File Using Scanner
 
@@ -126,9 +144,10 @@ In `Main.java`, you must:
 
 | Attribute Name | CSV Column Name | Column Index # | Notes |
 |----------------|------------------|----------------|-------|
-|                |                  |                |       |
-|                |                  |                |       |
-|                |                  |                |       |
+| name           | Pokemon          | 1              | Pokémon's name |
+| type1          | Type 1           | 2              | Primary type  |
+| type2          | Type 2           | 3              | Secondary type |
+| attack         | Attack           | 5              | Attack stat   |
 
 ---
 
@@ -137,16 +156,16 @@ In `Main.java`, you must:
 You must write **at least two algorithms** to analyze your dataset.
 
 ### Required: Choose 2 or more algorithms
+- [x] Maximum value of attribute (Attack stat)
+- [x] Average of attribute by category (Average attack for Grass-type)
 - [ ] Minimum value of attribute  
-- [ ] Maximum value of attribute  
-- [ ] Average of attribute  
 - [ ] Filter by category  
 - [ ] Count items matching a condition  
 
 **Algorithms I will implement:**
 
-1. max value of attack  
-2. average value of attack in a certain type
+1. **Find Strongest Pokémon:** Find the Pokémon with the maximum attack stat using a simple iteration through the array
+2. **Calculate Average Attack by Type:** Calculate the average attack power for all Pokémon of a specified type (Grass-type) by filtering and averaging
 
 Optional extras:  
 - Sorting  
@@ -160,18 +179,19 @@ Optional extras:
 
 After analyzing your objects, print:
 
-- ✔ How many rows were loaded  
-- ✔ Your algorithm results  
+- ✔ How many rows were loaded: **151 Pokémon**
+- ✔ Your algorithm results: 
+  - Strongest Pokémon: **Dragonite with an attack stat of 134**
+  - Average attack for Grass-type: **72.36** (14 Grass-type Pokémon)
 - ✔ A clear answer to your guiding question  
 
-**My findings:**  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
+**My findings:**
 
-**My answer to the guiding question:**  
-____________________________________________________________________  
-____________________________________________________________________  
+Analyzing 151 Generation 1 Pokémon, I discovered that Dragonite is the strongest Pokémon overall with an attack stat of 134. This Dragon/Flying-type is notably more powerful than other Pokémon like Kingler and Gyarados, both of which have attack stats in the 125-130 range. Grass-type Pokémon (14 in total) have an average attack power of approximately 72.36, making them slightly below the overall average. This indicates that Grass-types are generally balanced Pokémon with moderate attack power.
+
+**My answer to the guiding question:**
+
+The strongest Pokémon in Generation 1 is **Dragonite with an attack stat of 134**. Grass-type Pokémon have an average attack of 72.36, which is respectable compared to other types but reflects their role as balanced attackers with strengths in Special Attack rather than physical Attack.
 
 ---
 
@@ -217,18 +237,9 @@ Write a short reflection (3–5 sentences):
 - How might incomplete or inaccurate data affect results?
 - How trustworthy are your insights?
 
-**My reflection:**  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
+**My reflection:**
 
----
-
-## ⭐ Optional Challenges (Not Required but Fun!)
-
-### 🔹 User Input
-Allow the user to choose:
+The Pokémon dataset is relatively clean with complete entries for the 151 Pokémon in Generation 1. However, the data may be biased toward comparing statistical power rather than in-game strategic value, because it does not account for their move sets. The dataset is limited to Generation 1 Pokémon, so conclusions cannot be generalized to later generations. Missing data for move pools and abilities could affect strategic analysis. Overall, the dataset is trustworthy for basic statistical analysis of Generation 1 Pokémon stats, but would need to add in later Pokemon to be generalizable to the entire franchise.
 
 - Which attribute to analyze
 - Which category to filter
